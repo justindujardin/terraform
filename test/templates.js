@@ -30,6 +30,19 @@ describe("templates", function(){
       })
     })
 
+
+    it("should highlight code in markdown file", function(done){
+      poly.render("stuff.md", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<h1>hello markdown</h1>")
+        body.should.include("<p>")
+        body.should.include('<code class="language-json">')
+        body.should.include('<span class="attribute">hello-saturn</span>')
+        done()
+      })
+    })
+
     it("should render markdown file encoded in UTF-8 with BOM", function(done){
       poly.render("bom.md", function(error, body){
         should.not.exist(error)
