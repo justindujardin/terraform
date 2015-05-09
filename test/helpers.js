@@ -18,8 +18,8 @@ describe("helpers", function(){
     it('should build priority list for css file.', function(done){
       var list = polymer.helpers.buildPriorityList('main.css')
       list.should.be.an.instanceOf(Array)
-      list.should.have.lengthOf(6)
-      list.should.eql("main.styl, main.less, main.scss, main.css.styl, main.css.less, main.css.scss".split(', '))
+      list.should.have.lengthOf(8)
+      list.should.eql("main.styl, main.less, main.scss, main.sass, main.css.styl, main.css.less, main.css.scss, main.css.sass".split(', '))
       done()
     })
 
@@ -184,6 +184,18 @@ describe("helpers", function(){
 
     it('should ignore any part of tree starts with underscore.', function(done){
       var reply = polymer.helpers.shouldIgnore(path.join('foo', '_bar', 'baz.json'))
+      reply.should.be.true
+      done()
+    })
+    
+    it('should ignore .git dirs', function(done){
+      var reply = polymer.helpers.shouldIgnore(path.join('.git', 'foo.json'))
+      reply.should.be.true
+      done()
+    })
+
+    it('should ignore .gitignore files', function(done){
+      var reply = polymer.helpers.shouldIgnore(path.join('.gitignore'))
       reply.should.be.true
       done()
     })
