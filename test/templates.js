@@ -30,7 +30,7 @@ describe("templates", function(){
       poly.render("inline.ejs", function(error, body){
         should.not.exist(error)
         should.exist(body)
-        body.should.include("<style>.my-style {")
+        body.should.include("<style>.my-style{font-size:4em}</style>")
         done()
       })
     })
