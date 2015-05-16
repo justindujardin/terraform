@@ -34,6 +34,15 @@ describe("templates", function(){
         done()
       })
     })
+    it("should return error with less partial that has syntax error", function(done){
+      poly.render("invalid.ejs", function(error, body){
+        should.exist(error)
+        should.exist(error.message)
+        should.not.exist(body)
+        error.message.should.include('Unrecognised input')
+        done()
+      })
+    })
   })
 
   describe(".md", function(){
