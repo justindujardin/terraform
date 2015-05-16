@@ -177,7 +177,7 @@ describe("render(path, callback)", function(){
       poly.render("less.less", function(errors, body){
         should.not.exist(errors)
         should.exist(body)
-        body.should.include("body{background:#F0A}")
+        body.toLowerCase().should.include("body{background:#f0a}")
         done()
       })
     })
