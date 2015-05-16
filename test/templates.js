@@ -25,6 +25,17 @@ describe("templates", function(){
     })
   })
 
+  describe(".less", function(){
+    it("should render inline css for less partial", function(done){
+      poly.render("inline.ejs", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<style>.my-style {")
+        done()
+      })
+    })
+  })
+
   describe(".md", function(){
     it("should render markdown file", function(done){
       poly.render("stuff.md", function(error, body){
