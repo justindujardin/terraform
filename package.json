@@ -40,9 +40,12 @@
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "6.2.3",
+    "clean-css": "4.1.4",
     "coffee-script": "1.10.0",
     "ejs": "2.3.4",
+    "findup-sync": "^1.0.0",
     "harp-minify": "0.4.0",
+    "highlight.js": "8.5.0",
     "jade": "1.11.0",
     "less": "2.7.2",
     "lodash": "3.10.1",
@@ -51,10 +54,8 @@
     "node-sass": "3.7.0",
     "postcss": "5.0.14",
     "stylus": "0.54.5",
-    "through": "2.3.8",
-    "highlight.js": "8.5.0",
     "sync-exec": "~0.5.0",
-    "clean-css": "4.1.4"
+    "through": "2.3.8"
   },
   "devDependencies": {
     "mocha": "2.3.4",
